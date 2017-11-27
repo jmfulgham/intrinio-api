@@ -2,7 +2,7 @@
 ////////////////////////////////////////  Variables  /////////////////////////////////////////////////
 var username = "063868b1fa93f559ae2cd95824d9ac5a";
 var password = "92ef1568d3e3c7cec6a37dca78224d04";
-var authorized = window.btoa(username + ":" + password);
+var authorized = window.btoa(`${username}:${password}`);
 var companyInfo = '';
 var newsFeed = '';
 var ticker = '';
