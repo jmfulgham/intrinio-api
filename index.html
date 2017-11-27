@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Money Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="responsive.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coustard:400" rel="stylesheet">
+  </head>
+
+  <body>
+    <header role="banner">
+    </header>
+
+    <main role="main">
+
+      <section class="searchinstructions" aria-live="polite">
+        <section class="searchbox background">
+        	    <h1>Word on the Street</h1>
+          <form action='#' class="stock-search">
+            <h2><label for="query">What's the word on Wall Street?</label></h2>
+            <p>Search your favorite company below!</p>
+            <input type="text" class="searchingFor" placeholder="Ex. Apple, Exxon...">
+            <button type=submit>Search</button>
+          </form>
+       
+        </section>
+      </section>
+
+      <div class="col-4 showresults inline">
+        <!-- don't forget to add hidden -->
+        <section class="searchresults inline" aria-live="assertive">
+        </section>
+
+        <h3>Company Ticker Data</h3>
+        <section class="timeseries inline" aria-live="assertive">
+        </section>
+
+        <h3>Price Information</h3>
+        <section class="pricing inline" aria-live="assertive">
+        </section>
+    </div>
+
+    <div class="second">
+    	<h3>Company News</h3>
+        <section class="news" aria-live="assertive">
+        </section>
+    </div>
+
+  </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+
+</html>

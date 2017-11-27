@@ -1,0 +1,61 @@
+/*to fix the width of the element so it doesn't run over or bleed off page if adjusted*/
+* {
+  box-sizing:border-box;
+}
+
+/*to set the dimensions and padding between columns*/
+
+.description {
+  max-width:1000px;
+  padding-left:20px;
+  padding-right:20px;
+  margin:0 auto;
+}
+
+/*Clearfix so that elements with content will stack vertically*/
+
+.description::before, .description::after {
+  display:table;
+  content:'';
+}
+
+.description::after {
+  clear:both;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+/*mobile rules for all column classes.
+
+"When the screen width is less than 640px, columns should take up 100% of their parent container's 
+width, but there should continue to be padding between the card and the edge of the viewport."
+*/
+
+.col-3, .col-4, .col-6, .col-12 {
+  width:100%;
+}
+
+
+/* 640px + screens*/
+@media only screen and (width: 640px) {
+  .col-3 {
+    width:25%;
+  }
+  /* when I set this to min-width, the columns run over top of each other. Why is this?*/
+  
+  .col-4 {
+  width:33.33%;
+  }
+  
+  .col-6 {
+    width:50%;
+  }
+  
+  .col-12{
+   width:100%;
+  }
+}
