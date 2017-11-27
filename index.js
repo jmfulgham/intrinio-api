@@ -101,7 +101,7 @@ function useStockData(data){
 	var priceArray=Object.entries(price2);
 	console.log(priceArray);
 	priceArray.map(info => {
-		$('.pricing').empty();
+	
 		$('.pricing').append(`<ul><li>${info[0]}: ${info[1]}</li></ul>`);
 	  });
 
@@ -116,7 +116,7 @@ function formReset() {
   $('.searchresults').empty();
   $('.timeseries').empty();
   $('.news').empty();
-  //$('.pricing').empty();
+  $('.pricing').empty();
 };
 
 function clickSubmit() {
