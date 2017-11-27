@@ -6,7 +6,7 @@ var authorized = window.btoa(`${username}:${password}`);
 var companyInfo = '';
 var newsFeed = '';
 var ticker = '';
-var price='';
+var price = '';
 
 //////////////////////////////////////////  API requests  ////////////////////////////////////////////////////////
 
