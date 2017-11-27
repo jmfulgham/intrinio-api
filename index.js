@@ -115,7 +115,7 @@ function formReset() {
   $('.searchresults').empty();
   $('.timeseries').empty();
   $('.news').empty();
-  $('.pricing).empty();
+  $('.pricing').empty();
 };
 
 function clickSubmit() {
