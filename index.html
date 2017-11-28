@@ -9,54 +9,74 @@
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
     <script src="index.js"></script>
   </head>
 
+
+
   <body>
     <header role="banner">
-      
     </header>
 
     <main role="main">
 
       <section class="searchinstructions" aria-live="polite">
         <section class="searchbox background">
-        	    <h1>Word on the Street</h1>
+          <h1>Word on the Street</h1>
           <form action='#' class="stock-search">
             <h2><label for="query">What's the word on Wall Street?</label></h2>
             <p>Search your favorite company below!</p>
             <input type="text" class="searchingFor" placeholder="Ex. Apple, Exxon...">
             <button type=submit>Search</button>
           </form>
-       
         </section>
       </section>
 
-      <div class="col-4 showresults inline">
-        <!-- don't forget to add hidden -->
-        <section class="searchresults inline hidden" aria-live="assertive">
-        </section>
+      <div class="error hidden"></div>
 
-        <h3>Company Ticker Data</h3>
-        <section class="timeseries inline" aria-live="assertive">
-        </section>
 
-        <h3>Price Information</h3>
-        <section class="pricing inline" aria-live="assertive">
-        </section>
-    </div>
+      <div class="row">
+        <div class="col-4">
 
-    <div class="second inline">
-    	<h3>Company News</h3>
-        <section class="news" aria-live="assertive">
-        </section>
-    </div>
+          <div class="showresults hidden">
+            <h3>Company Ticker Data</h3>
+            <section class="timeseries" aria-live="assertive">
+            </section>
+          </div>
 
-  </main>
+        </div>
 
-  
+        <div class="col-4">
+
+          <div class="showresults hidden">
+            <h3>Price Information</h3>
+            <section class="pricing" aria-live="assertive">
+            </section>
+          </div>
+
+        </div>
+
+
+
+        <div class="col-4">
+
+          <div class="second hidden">
+            <h3>Company News</h3>
+            <section class="news" aria-live="assertive">
+            </section>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+    
+    <footer role="contentinfo" class="footer hidden">
+      <h4>Created By: <a href="mailto:monetfulgham@gmail.com?Subject=Hey%20Mo!">Mone't Fulgham</h4>
+    </footer>
+
   </body>
 
 </html>

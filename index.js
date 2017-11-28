@@ -44,19 +44,19 @@ function getNewsData(ticker) {
 }
 
 
-function getStockPrices(ticker){
-	$.ajax({
-		type:"GET",
-		url: `https://api.intrinio.com/prices?identifier=${ticker}`,
-		dataType: 'json',
-		page_number:1,
-		headers: {
-			"Authorization": "Basic " + authorized
-		},
-		success: function(data){
-			useStockData(data);
-		}
-	});
+function getStockPrices(ticker) {
+  $.ajax({
+    type: "GET",
+    url: `https://api.intrinio.com/prices?identifier=${ticker}`,
+    dataType: 'json',
+    page_number: 1,
+    headers: {
+      "Authorization": "Basic " + authorized
+    },
+    success: function(data) {
+      useStockData(data);
+    }
+  });
 }
 ///////////////////////////////////  API Data Storage  //////////////////////////////////////////////////////
 
@@ -68,13 +68,28 @@ function useReturnData(data) {
   var moreData = companyInfo['data'];
   //turn object entries into an array for loop
   var finalData = moreData['0'];
-  var allTheData = Object.entries(finalData);
+  if (finalData === undefined || null) {
+     $('.row').hide();
+    return $('.error').show().append(`<p>We're sorry, we can't find
+       what you're looking for. Please double check your entry and try again.</p>`)
+   
+  } 
+
+  else {
+    var allTheData = Object.entries(finalData)
+  }
   allTheData.map(info => {
     $('.timeseries').append(`<ul><li>${info[0]}: ${info[1]}</li></ul>`);
   });
   ticker = allTheData[0][1];
-  getNewsData(ticker);
-};
+  if (ticker !== null) {
+    getNewsData(ticker);
+  } else {
+    $('.row').hide();
+    $('.error').show().append(`<p>We're sorry, the company you searched doesn't
+        have available pricing information. Please double check your entry and try again.</p>`);
+  }
+}
 
 
 
@@ -91,19 +106,19 @@ function useNewsData(data) {
     var url = newsStory['url'];
     var title = newsStory['title']
     $('.news').append(`<section><a href="${url}" target="_blank"><h4>${title}</h4></a>
-    	<p>${summary}</section>`);
+      <p>${summary}</section>`);
   }
 };
 
-function useStockData(data){
-	price = data;
-	var price2=price['data']['0'];
-	var priceArray=Object.entries(price2);
-	console.log(priceArray);
-	priceArray.map(info => {
-	
-		$('.pricing').append(`<ul><li>${info[0]}: ${info[1]}</li></ul>`);
-	  });
+function useStockData(data) {
+  price = data;
+  var price2 = price['data']['0'];
+  var priceArray = Object.entries(price2);
+  console.log(priceArray);
+  priceArray.map(info => {
+
+    $('.pricing').append(`<ul><li>${info[0]}: ${info[1]}</li></ul>`);
+  });
 
 }
 
@@ -128,8 +143,13 @@ function clickSubmit() {
     getCompanyData(searchCriteria);
     //$(`.searchresults`).append(`Stock Ticker: ${searchUpperCase}<br>`)
     $('.showresults').show();
+    $('.second').show();
+    $('.footer').show();
+    $('.error').empty();
+    $('.row').show();
 
   });
+
 }
 
 $(clickSubmit)
