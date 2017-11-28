@@ -36,8 +36,7 @@ function getNewsData(ticker) {
       "Authorization": "Basic " + authorized
     },
     success: function(data) {
-      useNewsData(data); //set success functions in .done for when request
-      //findCompanyNews();
+      useNewsData(data); 
       getStockPrices(ticker);
     }
   });
@@ -64,9 +63,7 @@ function getStockPrices(ticker) {
 
 function useReturnData(data) {
   companyInfo = data;
-  //access the data in the object and verify
   var moreData = companyInfo['data'];
-  //turn object entries into an array for loop
   var finalData = moreData['0'];
   if (finalData === undefined || null) {
      $('.row').hide();
@@ -96,9 +93,7 @@ function useReturnData(data) {
 function useNewsData(data) {
   var news = data;
   newsFeed = news['data'];
-  // var currentNews = Object.entries(newsFeed);
   var shortNews = newsFeed.slice(0, 5);
-  //loop through each news story and create arrays
   for (var i = 0; i < shortNews.length; i++) {
     var moreNews = Object.entries(shortNews);
     var newsStory = moreNews[i][1];
@@ -141,7 +136,6 @@ function clickSubmit() {
     var searchCriteria = $('input[type=text]').val();
     var searchUpperCase = searchCriteria.toUpperCase();
     getCompanyData(searchCriteria);
-    //$(`.searchresults`).append(`Stock Ticker: ${searchUpperCase}<br>`)
     $('.showresults').show();
     $('.second').show();
     $('.footer').show();
