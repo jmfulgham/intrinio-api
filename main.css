@@ -62,7 +62,7 @@ input {
 }
 
 footer{
-  //position:absolute;
+  
   height:100px;
   background-color:silver;
   bottom:0;
@@ -72,7 +72,6 @@ footer{
 }
 
 .searchbox{
-	// margin-top:15px;
 	text-align: center;
 	display:block;
 	padding:10px;
@@ -87,11 +86,7 @@ footer{
   
 }
 
-.row {
-   
-}
 
-// .news{
-// 	padding-right:20px;
-// }
+
+
 
