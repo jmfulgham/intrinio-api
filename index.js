@@ -6,7 +6,7 @@ var authorized = window.btoa(`${username}:${password}`);
 var companyInfo = '';
 var newsFeed = '';
 var ticker = '';
-var price='';
+var price = '';
 
 //////////////////////////////////////////  API requests  ////////////////////////////////////////////////////////
 
@@ -101,8 +101,9 @@ function useStockData(data){
 	var priceArray=Object.entries(price2);
 	console.log(priceArray);
 	priceArray.map(info => {
-    $('.pricing').append(`<ul><li>${info[0]}: ${info[1]}</li></ul>`);
-  });
+	
+		$('.pricing').append(`<ul><li>${info[0]}: ${info[1]}</li></ul>`);
+	  });
 
 }
 
@@ -115,6 +116,7 @@ function formReset() {
   $('.searchresults').empty();
   $('.timeseries').empty();
   $('.news').empty();
+  $('.pricing').empty();
 };
 
 function clickSubmit() {
