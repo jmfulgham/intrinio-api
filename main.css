@@ -10,7 +10,7 @@ header {
   width: 100%;
   background-image: url('https://static.pexels.com/photos/374710/pexels-photo-374710.jpeg');
   background-repeat:no-repeat;
-  background-size:100%;
+  background-size: cover;
   height:250px;
   font-size: 30px;
   text-align: center;
@@ -62,7 +62,7 @@ input {
 }
 
 footer{
-  //position:absolute;
+  
   height:100px;
   background-color:silver;
   bottom:0;
@@ -72,7 +72,6 @@ footer{
 }
 
 .searchbox{
-	// margin-top:15px;
 	text-align: center;
 	display:block;
 	padding:10px;
@@ -87,11 +86,7 @@ footer{
   
 }
 
-.row {
-   
-}
 
-// .news{
-// 	padding-right:20px;
-// }
+
+
 
