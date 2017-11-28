@@ -106,7 +106,7 @@ function useNewsData(data) {
     var url = newsStory['url'];
     var title = newsStory['title']
     $('.news').append(`<section><a href="${url}" target="_blank"><h4>${title}</h4></a>
-      <p>${summary}</section>`);
+      <p>${summary}</p></section>`);
   }
 };
 
